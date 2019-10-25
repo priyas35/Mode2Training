@@ -1,0 +1,36 @@
+package com.priya;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+	
+	@Autowired
+	UserRepository userRepository;
+	
+	@Autowired
+	PersonaldetailsRepository personaldetailsRepository;
+
+	
+	@RequestMapping("/user/{username}")
+	public User byUsername(@PathVariable("username") String username) {
+		//System.out.println("inside by id" +userName);
+		User user = (User) userRepository.getUserByusername(username);
+		return user;
+	}
+	
+	
+	
+	  @RequestMapping("/add") 
+	  public String add(Personaldetails personaldetails) {
+	  personaldetailsRepository.save(personaldetails);
+	  return "added"; 
+	  }
+	 
+	
+}

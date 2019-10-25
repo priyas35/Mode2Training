@@ -1,0 +1,9 @@
+package com.bank;
+
+public class Property {
+       private int id;
+       private String propertytype;
+       private int propertyworth;
+       private int propertyworth;
+       
+}

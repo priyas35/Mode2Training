@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.priya.BankUserService1Application&apos; to &apos;MortgageUserServiceApplication&apos;&#x0D;&#x0A;- Original project: &apos;Mortgage-UserService&apos;&#x0D;&#x0A;- Original element: &apos;com.priya.BankUserService1Application&apos;&#x0D;&#x0A;- Renamed element: &apos;com.priya.MortgageUserServiceApplication&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BankUserService1Application&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.priya{BankUserService1Application.java[BankUserService1Application" matchStrategy="1" name="MortgageUserServiceApplication" qualified="false" references="true" similarDeclarations="false" stamp="1571397171703" textual="false" version="1.0"/>
+</session>

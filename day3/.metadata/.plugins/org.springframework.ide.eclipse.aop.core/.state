@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="mortgage-userservice"/>
+<aop-project name="DiscoverMicroservice"/>
+<aop-project name="mortgage-loanservice"/>
+<aop-project name="mortgage-webclient"/>
+</aop-reference-model>

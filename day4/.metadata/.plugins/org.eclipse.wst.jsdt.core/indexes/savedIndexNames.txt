@@ -1,0 +1,11 @@
+INDEX VERSION 1.4+C:\Users\Coalesce\Documents\day4\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+98425270.index
+3426408605.index
+1329713527.index
+3272959058.index
+1273009080.index
+3587031292.index
+3312367641.index
+1813629702.index
+1834869064.index
+1636458096.index

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>
+   if your property value is greater than 10000 means Click Here to get Extra 5% loan
+   <a href="/offer">Click</a>
+   
+   if you are a existing user means click here
+   <a href="/offerex">Click</a>
+  </h1>
+</body>
+</html>

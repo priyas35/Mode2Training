@@ -1,0 +1,61 @@
+package com.bank;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @author Dinesh.Rajput
+ *
+ */
+public class RemoteMortgageappRepository implements ClientMortgageService {
+	
+	@Autowired
+	protected RestTemplate restTemplate;
+	
+	
+	protected String serviceUrl;
+	
+	public RemoteMortgageappRepository(String serviceUrl) {
+		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
+				: "http://" + serviceUrl;
+	}
+
+	@Override
+	public String addMortgageapp(Mortgageapp accounts) {
+		return serviceUrl;
+		
+	}
+
+	/*
+	 * @Override public String deleteMortgage(int accountnum) { // TODO
+	 * Auto-generated method stub return null; }
+	 */
+
+	@Override
+	public List<Mortgageapp> getAccount(int userid) {
+		Mortgageapp[] accounts = restTemplate.getForObject(serviceUrl+"/account/getAccount/"+userid,Mortgageapp[].class,userid);
+	      return Arrays.asList(accounts);
+	}
+
+	@Override
+	public String deleteAccount(int accountnum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+//	@Override
+//	public List<Account> getAllMortgageapp() {
+//		Account[] accounts = restTemplate.getForObject(serviceUrl+"/accounts", Account[].class);
+//		return Arrays.asList(accounts);
+//	}
+//
+//	@Override
+//	public Account getAccount(String number) {
+//		return restTemplate.getForObject(serviceUrl + "/accounts/{id}",
+//				Account.class, number);
+//	}
+
+}

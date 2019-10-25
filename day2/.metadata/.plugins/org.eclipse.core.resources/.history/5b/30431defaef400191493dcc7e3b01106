@@ -1,0 +1,10 @@
+package com.bank;
+
+public interface ClientPropertyService {
+
+	public String add(Property property);
+
+	/* public User add(User user); */
+	
+
+}

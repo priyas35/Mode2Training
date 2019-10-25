@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\Coalesce\Documents\day3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1329713527.index
+\bank-webclient\src\main\java
+C:\Users\Coalesce\Documents\day3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3282551610.index
+\mortgage-webclient\src\main\java

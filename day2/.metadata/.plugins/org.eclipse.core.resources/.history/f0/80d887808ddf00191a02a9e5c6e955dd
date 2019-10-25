@@ -1,0 +1,7 @@
+package com.priya;
+
+public interface UserService {
+	
+	public String getUserByUserName(String userName);
+
+}

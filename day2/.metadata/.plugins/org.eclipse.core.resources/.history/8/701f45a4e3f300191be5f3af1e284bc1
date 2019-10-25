@@ -1,0 +1,50 @@
+package com.priya;
+
+public class Property {
+       private int id;
+       private String propertytype;
+       private int propertyworth;
+       private int loanamount;
+       private int propetyweight;
+       private int year;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getPropertytype() {
+		return propertytype;
+	}
+	public void setPropertytype(String propertytype) {
+		this.propertytype = propertytype;
+	}
+	public int getPropertyworth() {
+		return propertyworth;
+	}
+	public void setPropertyworth(int propertyworth) {
+		this.propertyworth = propertyworth;
+	}
+	public int getLoanamount() {
+		return loanamount;
+	}
+	public void setLoanamount(int loanamount) {
+		this.loanamount = loanamount;
+	}
+	public int getPropetyweight() {
+		return propetyweight;
+	}
+	public void setPropetyweight(int propetyweight) {
+		this.propetyweight = propetyweight;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+       
+       
+       
+       
+}

@@ -1,0 +1,18 @@
+package com.mortgage;
+
+import org.junit.Test;
+
+public class UserTestCase {
+	
+	
+	
+	 @Test public void testGetUser(){
+		   assertEquals("Order Placed Successfully...", StockBAL.placeOrderBal("S002",
+		  2)); assertEquals("Insufficent Quantity...", StockBAL.placeOrderBal("S003",
+		  2000)); assertEquals("StockID not found...", StockBAL.placeOrderBal("f003",
+		  2000));
+		 
+		 }
+
+
+}

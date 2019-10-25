@@ -1,0 +1,145 @@
+package com.priya;
+
+
+import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+@RestController
+public class EmployController {
+
+	
+
+	
+
+	@Autowired
+	EmployRepository emprep;
+
+	@RequestMapping(value = "/")
+	public ModelAndView getEmployees() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findAll());
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/displayjavacontractors")
+	public ModelAndView getjavacontractors() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findByDeptAndDesig("mech", "student"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/displaystudents")
+	public ModelAndView getstudents() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findByDesig("student"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/displaymanagers")
+	public ModelAndView getmanagers() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findByDesig("manager"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/displaystudentswith5000moresalary")
+	public ModelAndView getstudenthaving1000salary() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findByDesigAndSalary("student",1000));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/namestartswitha")
+	public ModelAndView getdeptAndName() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findByDesigAndName("student"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	@RequestMapping(value = "/sortbydesig")
+	public ModelAndView sortbydesig() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findAll(Sort.by("desig")));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	@RequestMapping(value = "/sortbydesigdecending")
+	public ModelAndView sortbydesigdesending() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findAll(Sort.by("desig").descending()));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	@RequestMapping(value = "/sortbydeptandsalarydecending")
+	public ModelAndView sortbydesigandsalarydesending() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.findAll(Sort.by("dept").descending().and(Sort.by("basic").descending())));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	@RequestMapping(value = "/displaystudentssortsalarybydecending")
+	public ModelAndView displaymanagerssortsalarybydecending() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.sortByDesig("student", "basic"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	@RequestMapping(value = "/sortByDesigdeptandname")
+	public ModelAndView sortByDesigdeptandname() {
+	ModelAndView mv=new ModelAndView();
+	 mv.addObject("employeeList", emprep.sortByDesigdeptandname("student","basic"));
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+	@RequestMapping(value = "/displayAll/Page/{pageno}")
+	public ModelAndView page1(@PathVariable("pageno")int pageno) {
+	ModelAndView mv=new ModelAndView();
+	PageRequest pageable = PageRequest.of(pageno - 1, 15);
+    Page<Employ> empPage = emprep.findAll(pageable);
+    int totalPages = empPage.getTotalPages();
+    if(totalPages > 0) {
+        List<Integer> pageNumbers = IntStream.rangeClosed(1,totalPages).boxed().collect(Collectors.toList());
+        mv.addObject("pageNumbers", pageNumbers);
+    }
+    mv.addObject("articleList", empPage.getContent());
+	 mv.setViewName("home");
+	 return mv;
+	
+	}
+	
+}
+

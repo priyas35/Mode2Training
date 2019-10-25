@@ -1,0 +1,12 @@
+package com.bank;
+
+import java.util.List;
+
+public interface ClientMortgageService {
+	
+	public String addAccount(Accounts accounts);
+	
+	public String deleteAccount(int accountnum);
+	
+	public List<Accounts> getAccount(int userid);
+}

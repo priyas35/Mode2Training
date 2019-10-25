@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;User.java&apos; to &apos;Bank-Webclient/src/main/java/com.priya&apos;&#x0D;&#x0A;- Original project: &apos;Bank-UserService-1&apos;&#x0D;&#x0A;- Destination element: &apos;Bank-Webclient/src/main/java/com.priya&apos;&#x0D;&#x0A;- Original element: &apos;com.priya.User.java&apos;" description="Copy compilation unit" destination="=Bank-Webclient/src\/main\/java&lt;com.priya" element1="/src\/main\/java&lt;com.priya{User.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1569491068763" units="1" version="1.0"/>
+</session>

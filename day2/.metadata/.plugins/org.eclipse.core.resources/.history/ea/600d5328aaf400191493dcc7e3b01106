@@ -1,0 +1,10 @@
+package com.bank;
+
+public interface ClientUserService {
+
+	public int login(User user);
+
+	/* public User add(User user); */
+	
+
+}

@@ -1,0 +1,65 @@
+package com.bank;
+
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+@RestController
+public class ClientController {
+	
+
+
+	@Autowired
+	ClientPersonaldetailsService clientPersonaldetailsService;
+
+	@Autowired
+	ClientUserService clientUserService;
+	
+	
+	@RequestMapping("/home")
+	public ModelAndView home(ModelAndView model) {
+		model.addObject("user" , new User());
+		model.setViewName("login");
+		return model;
+	}
+	
+	@RequestMapping("/Authenticate")
+	public ModelAndView loginAuthrntication(@ModelAttribute User user) {
+		int result = clientUserService.login(user);
+		if (result == 0) {
+			
+			return new ModelAndView("accounthome");
+				}
+		else {
+			return new ModelAndView("login");
+		}
+			
+	}
+	
+	
+
+	
+	@RequestMapping("/registerform")
+	public ModelAndView personaldetails(ModelAndView model) {
+		model.addObject("mortgage" , new Personaldetails());
+		model.setViewName("personaldetails");
+		return model;
+	}
+	
+	@RequestMapping("/savedetails")
+	public ModelAndView savedetails(@ModelAttribute Personaldetails personaldetails) {
+		clientPersonaldetailsService.add(personaldetails);
+		return new ModelAndView("loanhome");
+					
+	}
+
+	}

@@ -1,0 +1,69 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Employee Management Screen</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Employ List</h1>
+		
+		<table border="1">
+           <tr>
+           <td>EmpNo</td>
+			<th>EmpName</th>
+			<th>Department</th>
+			<th>Designation</th>
+			<th>Basic</th>
+		    
+
+			<c:forEach var="employ" items="${employeeList}">
+				<tr>
+                     <td>${employ.empno}</td>
+					<td>${employ.name}</td>
+					<td>${employ.dept}</td>
+					<td>${employ.desig}</td>
+					<td>${employ.basic}</td>
+				
+				</tr>
+			</c:forEach>
+		
+		</table>
+		
+		<h4>
+			<!-- Display JavaContractors <a href="/displayjavacontractors">here</a><br/>
+			Display Students <a href="/displaystudents">here</a><br/>
+			Display Managers <a href="/displaymanagers">here</a><br/>
+			Display Students with salary more than 5000 rupees <a href="/displaystudentswith5000moresalary">here</a><br/>
+			Display students name starts with a <a href="/namestartswitha">here</a><br/>
+			Display all orderby designation<a href="/sortbydesig">here</a><br/>
+			Display all orderby designation in decending<a href="/sortbydesigdecending">here</a><br/>
+			Display all orderby department in decending and salary in decending<a href="/sortbydeptandsalarydecending">here</a><br/>
+			Display all display designation order by salary in decending<a href="/displaystudentssortsalarybydecending">here</a><br/>
+			Display all display designation order by salary in decending<a href="/sortByDesigdeptandname">here</a><br/> -->
+	<!-- <a href="/displayAll/Page/0">Page 1 </a><br/>
+			<a href="/displayAll/Page/1">Page 2 </a><br/>
+			<a href="/displayAll/Page/2">Page 3 </a><br/>
+			<a href="/displayAll/Page/3">Page 4 </a><br/>  -->
+			
+			<%-- <c:forEach var="i" begin="0" end="${lastPageNo-1 }" >
+		
+		<a href="/displayAll?pageNo=${i }">${i+1 }</a>&nbsp;&nbsp;&nbsp;&nbsp;	<!-- Displaying Page No -->
+	</c:forEach> --%>
+
+			 
+                       
+                   
+			
+		</h4>
+					
+	
+			
+			
+
+</body>
+</html>

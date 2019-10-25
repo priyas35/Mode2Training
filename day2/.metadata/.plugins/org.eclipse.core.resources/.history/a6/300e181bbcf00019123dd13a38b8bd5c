@@ -1,0 +1,80 @@
+package com.bank;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="mortgageapp")
+public class Mortgageapp {
+	/*
+	 * accountNo int not null primary key, amount double, accountType char, userId
+	 * int(13),
+	 */
+
+	   @Id
+	   @Column(name="martgageID")
+	   private int accountno;
+	   @Column(name="name")
+	   private String name;
+	   @Column(name="age")
+	   private int age;
+	   @Column(name="gender")
+	   private String gender;
+	   @Column(name="country")
+	   private String country;
+	   @Column(name="address")
+	   private String address;
+	   @Column(name="cibil")
+	   private String cibil;
+	public int getAccountno() {
+		return accountno;
+	}
+	public void setAccountno(int accountno) {
+		this.accountno = accountno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCibil() {
+		return cibil;
+	}
+	public void setCibil(String cibil) {
+		this.cibil = cibil;
+	}
+	   
+	   
+	   
+	   
+	   
+}	   
+	   
+	

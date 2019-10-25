@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="bank-webclient"/>
+<aop-project name="bank-userservice"/>
+<aop-project name="DiscoveryMicroService"/>
+<aop-project name="bank-accountservice"/>
+</aop-reference-model>

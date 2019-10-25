@@ -1,0 +1,96 @@
+package com.priya;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
+import org.apache.log4j.Logger;
+
+
+public class StubUserRepository implements UserRepository{
+	
+	
+private Map<String, User> userByNumber = new HashMap<String, User>();
+	
+	public StubUserRepository() {
+		User user = new User(1, "Priya" , "srinath");
+		userByNumber.put("srinath", user);
+		user = new User(2000l, "Srinath" , "priya");
+		userByNumber.put("2089", user);
+		user = new User(3000l, "Subiksha" , "hari");
+		userByNumber.put("1286", user);
+	}
+
+
+	@Override
+	public <S extends User> S save(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends User> Iterable<S> saveAll(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<User> findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Integer id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<User> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<User> findAllById(Iterable<Integer> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(User entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends User> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User getUserByUserName(String userName) {
+		
+	}
+
+}
